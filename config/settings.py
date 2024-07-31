@@ -106,11 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul' # 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False  # False 로 설정해야 models 에 TIME ZONE 이 반뎡된다.
 
 
 # Static files (CSS, JavaScript, Images)
