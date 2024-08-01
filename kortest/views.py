@@ -22,6 +22,23 @@ def testsheet(request, ts_name):
     return render(request, 'kortest/testsheet.html', context)
 
 def answer_create(request, ts_name):
+    print("------------------------")
+    print(f"  kortest:answer_create({request}, {ts_name})")
+    print("------------------------")
+    
     ts = get_object_or_404(TestSheet, name=ts_name)
+    
+    print("  TS obtained: ", ts)
+    for item in ts.items.all():
+        ans_name = item.name + "_answer"
+        answer = request.POST.get(ans_name)
+        choices = [None, item.ch1, item.ch2, item.ch3, item.ch4]
+        correct_choice = choices[int(item.correct_choice)]
+        iscorrect = answer == correct_choice
+
+        print("\t", item.name, item.correct_choice, f"correct='{correct_choice}'")
+        print("\tAnswered:", answer)
+        print("\tResult:", answer == correct_choice)
+        # break
     context = {'ts': ts}
     return redirect('kortest:index')

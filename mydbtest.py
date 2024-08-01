@@ -17,13 +17,13 @@ for ii in range(nitems):
     i = ii + 1
     name = get_item_name(i) 
     item = Item(name = name,
-                qtext = f"Question text of {name}",
-                jimun = f"이것은 지문입니다 {name}",
-                ch1 = f"첫번째 초이스 {name}",
-                ch2 = f"두번째 초이스 {name}",
-                ch3 = f"세번째 초이스 {name}",
-                ch4 = f"네번째 초이스 {name}",
-                correct_choice = 1 + i%4)
+                qtext = f"Question text of {name} 입니다.",
+                jimun = f"이것은 문제 {name}의 지문입니다 ",
+                ch1 = f"첫번째 초이스 {name} 입니다.",
+                ch2 = f"두번째 초이스 {name} 입니다.",
+                ch3 = f"세번째 초이스 {name} 입니다.",
+                ch4 = f"네번째 초이스 {name} 입니다.",
+                correct_choice = random.randint(1,4))
     
     item.save()
 
@@ -34,8 +34,10 @@ for ii in range(nitems):
 
 test1 = TestSheet.objects.create(name = "TestSheet_1_odd")
 test2 = TestSheet.objects.create(name = "TestSheet_2_even")
+test3 = TestSheet.objects.create(name = "TestSheet_3")
 list_tests = [test1, test2]
 # this is done by creating Memberships
+# for test1 and test2
 for i in range(1, nitems+1):
     name = get_item_name(i)
     print(f"allocating item {name}")
@@ -46,6 +48,17 @@ for i in range(1, nitems+1):
         member = Membership(item=Item.objects.get(name=name),
                             testsheet=list_tests[0])
     member.save()
+#
+
+# for test3
+start = 14 
+ntest_items = 10  # 10 items in total
+for itnum in range(ntest_items):
+    i = start - itnum  # reverse order
+    name = get_item_name(i)
+    print(name)
+    m = Membership(item=Item.objects.get(name=name), testsheet=test3)
+    m.save()
 #
 
 # 3. Now check the status of the testsheets
@@ -98,3 +111,8 @@ def print_answers():
 #
 
 print_answers()
+
+
+# You can access all the Testsheets containing a specific item
+item = Item.objects.get(name=get_item_name(5))  # an item
+tss = item.testsheet_set.all() # this will give you two testsheets containing the item

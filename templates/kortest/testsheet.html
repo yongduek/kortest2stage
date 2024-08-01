@@ -7,8 +7,10 @@
     <div>
         <p> [{{forloop.counter}}] {{item.name}}>  ---     {{item.qtext}} </p>
         <p> {{item.jimun}} </p>
-        <p> {{item.ch1}} </p>
-        <p> {{item.ch2}} </p>
+        <label><input type="radio" name="{{item.name}}_answer" value="{{item.ch1}}"> {{item.ch1}} </label>
+        <label><input type="radio" name="{{item.name}}_answer" value="{{item.ch2}}"> {{item.ch2}} </label>
+        <label><input type="radio" name="{{item.name}}_answer" value="{{item.ch3}}"> {{item.ch3}} </label>
+        <label><input type="radio" name="{{item.name}}_answer" value="{{item.ch4}}"> {{item.ch4}} </label>
     </div>
     {% endfor %}
     <input type="submit" value="답안 제출">
