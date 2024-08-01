@@ -1,0 +1,10 @@
+{% if tslist %}
+    <ul>
+        {% for ts in tslist %}
+        <p> <a href="{% url 'kortest:testsheet' ts_name=ts.name %}"> [{{ forloop.counter }}]  [{{ ts.name }}] created at [{{ ts.created_datetime }}] </a></p>
+        <!-- <p> <a href="{{ts.name}}/"> [{{ forloop.counter }}]  [{{ ts.name }}] created at [{{ ts.created_datetime }}] </a></p> -->
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> 해당하는 문제지가 없습니다.</p>
+{% endif %}

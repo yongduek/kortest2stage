@@ -1,0 +1,15 @@
+<h1> {{ts.name}} </h1>
+
+
+<form action="{% url 'kortest:answer_create' ts_name=ts.name %}" method="post">
+{% csrf_token %}
+    {% for item in ts.items.all %}
+    <div>
+        <p> [{{forloop.counter}}] {{item.name}}>  ---     {{item.qtext}} </p>
+        <p> {{item.jimun}} </p>
+        <p> {{item.ch1}} </p>
+        <p> {{item.ch2}} </p>
+    </div>
+    {% endfor %}
+    <input type="submit" value="답안 제출">
+</form>

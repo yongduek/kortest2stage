@@ -35,7 +35,6 @@ class Membership(models.Model): # association of Item to a TestSheet
 
 class Answer(models.Model):
     test_item = models.ForeignKey(Membership, on_delete=models.CASCADE)
-    # item = models.ForeignKey(Item, on_delete=models.CASCADE)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     choice = models.CharField(max_length=100, default="0")
