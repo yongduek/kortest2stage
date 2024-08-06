@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
-    <!-- pybo CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'pybo/style.css' %}">
-    <title>Hello, pybo!</title>
+    <!-- kortest CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'kortest/style.css' %}">
+    <title>Hello, Kortest!</title>
 </head>
 <body>
 <!-- 네비게이션바 -->
-{% include "navbar.htmll" %}
+{% include "navbar.html" %}
 
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 {% block content %}
@@ -22,6 +22,5 @@
 
 <!-- Bootstrap JS -->
  <script src="{% static 'bootstrap.min.js' %}"></script>
-
 </body>
 </html>

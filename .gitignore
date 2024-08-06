@@ -3,6 +3,4 @@ config/__pycache__/*
 kortest/__pycache__
 kortest/migrations
 *.pyc
-*.pyc
-*.pyc
-*.pyc
+

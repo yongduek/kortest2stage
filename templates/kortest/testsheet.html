@@ -1,5 +1,7 @@
-<h1> {{ts.name}} </h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 
+<h1> {{ts.name}} </h1>
 
 <form action="{% url 'kortest:answer_create' ts_name=ts.name %}" method="post">
 {% csrf_token %}

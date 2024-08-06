@@ -1,10 +1,27 @@
+{% extends 'base.html' %}
+<!-- {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}"> -->
+
+{% block content %}
+<!-- start of this block -->
+
 {% if tslist %}
+
+    <h1> 현재 테스트는 다음과 같습니다. </h1>
+    <br>
+    <div class=" ">시험지 이름을 클릭하면 시험이 시작됩니다.</div>
+    <br>
     <ul>
         {% for ts in tslist %}
-        <p> <a href="{% url 'kortest:testsheet' ts_name=ts.name %}"> [{{ forloop.counter }}]  [{{ ts.name }}] created at [{{ ts.created_datetime }}] </a></p>
-        <!-- <p> <a href="{{ts.name}}/"> [{{ forloop.counter }}]  [{{ ts.name }}] created at [{{ ts.created_datetime }}] </a></p> -->
+        <p> <a href="{% url 'kortest:testsheet' ts_name=ts.name %}"> 
+            [{{ forloop.counter }}]  [{{ ts.name }}] 
+            created at [{{ ts.created_datetime }}] </a>
+        </p>
         {% endfor %}
     </ul>
 {% else %}
     <p> 해당하는 문제지가 없습니다.</p>
 {% endif %}
+
+<!-- end of the block -->
+ {% endblock %}

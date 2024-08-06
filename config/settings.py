@@ -118,6 +118,10 @@ USE_TZ = False  # False 로 설정해야 models 에 TIME ZONE 이 반뎡된다.
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
