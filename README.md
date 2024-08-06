@@ -1,5 +1,10 @@
 # kortest2stage
 
+Target: Two stage testing
+
+Currently, only one stage test of 20 items is under development, since it is also needed in reality.
+
+---
 Home directory is `kortest2stage`.
 Start server
 ```
