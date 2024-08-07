@@ -5,6 +5,13 @@ Target: Two stage testing
 Currently, only one stage test of 20 items is under development, since it is also needed in reality.
 
 ---
+
+Starting virtual environment. Creation of virtual environment is different depending on the operating system. Below is for Windows 10 environment.
+```
+cd kortes2stage
+./venv/scripts/activate
+```
+
 Home directory is `kortest2stage`.
 Start server
 ```
