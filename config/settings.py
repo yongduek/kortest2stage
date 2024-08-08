@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'kortest.apps.KortestConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,3 +127,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 로그인 성공 후 자동이동하는 URL
+LOGIN_REDIRECT_URL = '/'

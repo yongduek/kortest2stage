@@ -29,10 +29,15 @@ The file `mydbtest.py` contains several tests to examine functionings of data mo
     - model creation
     - access to items and testsheets
     - access to Membership
-- [] User manipulation and administration as a separate app (cf. Chapter 4 of [1], [2]).
-- [] Include User model in Answer.
-- [] Make a model connecting User and tests allocated with `done` flag. Only `done=False` tests will be displayed. Use the User model of Django as it is and make a model using `OneToOneField` (cf. Chapter 4 of [1], [2])
+- [] User login/logout and administration as a separate app (cf. Chapter 4 of [1], [2]).
+- [] Automatic multiple user account creation using an input csv file containing `name`, `email`, `student_id`
+- [] A data table of (`user`, `testsheet`, `done`)
+- [] Include User in Answer.
+- Make a model connecting User and tests allocated with `done` flag. Only `done=False` tests will be displayed. Use the User model of Django as it is and make a model using `OneToOneField` (cf. Chapter 4 of [1], [2])
 
+###
+- No user id creation (this is done by admin only before having a test.)
+- 
 
 ### References
 1. Django by examples, 5th ed.

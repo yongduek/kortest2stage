@@ -22,5 +22,7 @@ from kortest import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 #    path('kortest/', views.index),
-    path('kortest/', include('kortest.urls'))
+    path('kortest/', include('kortest.urls')),
+    path('account/', include('account.urls')),
+    path('', views.index, name='index')
 ]
